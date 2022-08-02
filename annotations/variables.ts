@@ -11,7 +11,7 @@ let truths: boolean[] = [true, true, false];
 
 class Car {}
 
-let car: Car = new Car();
+let newCar: Car = new Car();
 
 let point: { x: number; y: number } = {
   x: 10,
