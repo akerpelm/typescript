@@ -4,8 +4,8 @@ const dates = [new Date(), new Date()];
 
 const carsByMake = [['f150'], ['carolla'], ['camaro']];
 
-const car = carMakers[0];
-const myCar = carMakers.pop();
+// const car = carMakers[0];
+// const myCar = carMakers.pop();
 
 //Prevent incompatible values:
 carMakers.push(100);
