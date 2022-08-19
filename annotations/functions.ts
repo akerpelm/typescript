@@ -46,3 +46,5 @@ const logWeather = ({
 };
 
 logWeather(forecast);
+
+logWeather({ date: new Date(), weather: 'true' });

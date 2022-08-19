@@ -26,3 +26,5 @@ const drink = {
 
 printSummary(oldCivic);
 printSummary(drink);
+
+printSummary(test);
