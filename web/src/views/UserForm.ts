@@ -10,6 +10,7 @@ export class UserForm {
       this.render();
     });
   }
+
   eventsMap(): { [key: string]: () => void } {
     return {
       'click:.set-age': this.onSetAgeClick,
