@@ -1,4 +1,6 @@
-export abstract class View {
+import { UserProps } from '../models/User';
+import { Model } from '../models/Model';
+export abstract class View<User, UserProps> {
   constructor(public parent: Element, public model: T) {
     this.bindModel();
   }
