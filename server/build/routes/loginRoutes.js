@@ -21,7 +21,16 @@ router.get('/login', (req, res) => {
     </form>
   `);
 });
+const isValidCredential = (email, password) => {
+    return email === 'hi@hi.com' && password === 'password';
+};
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
-    res.send(email + password);
+    if (email && password && isValidCredential(email, password)) {
+        req.session = { loggedIn: true };
+        res.redirect('/');
+    }
+    else {
+        res.send('Invalid email or password');
+    }
 });
