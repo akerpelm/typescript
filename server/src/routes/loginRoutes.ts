@@ -11,6 +11,9 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
     next();
     return;
   }
+
+  res.status(403);
+  res.send('Not permitted.');
 }
 const router = Router();
 
@@ -67,6 +70,10 @@ router.get('/', (req: Request, res: Response) => {
 router.get('/logout', (req: Request, res: Response) => {
   req.session = undefined;
   res.redirect('/');
+});
+
+router.get('/protected', requireAuth, (req: Request, res: Response) => {
+  res.send('Welcome to protected router, logged in user');
 });
 
 export { router };
