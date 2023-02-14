@@ -7,7 +7,8 @@ export function controller(routePrefix: string) {
   return function (target: Function) {
     const router = AppRouter.getInstance();
     //when applying to a class, target is constructor, not prototype.
-    for (let key in target.prototype) {
+    const { prototype } = target;
+    for (let key in prototype) {
       const routeHandler = target.prototype[key];
       const path = Reflect.getMetadata(
         MetadataKeys.path,

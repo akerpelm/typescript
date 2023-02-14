@@ -17,7 +17,8 @@ function controller(routePrefix) {
     return function (target) {
         var router = AppRouter_1.AppRouter.getInstance();
         //when applying to a class, target is constructor, not prototype.
-        for (var key in target.prototype) {
+        var prototype = target.prototype;
+        for (var key in prototype) {
             var routeHandler = target.prototype[key];
             var path = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.path, target.prototype, key);
             var method = Reflect.getMetadata(MetadataKeys_1.MetadataKeys.method, target.prototype, key);

@@ -8,7 +8,7 @@ function logger(req: Request, res: Response, next: NextFunction) {
 @controller('/auth')
 export class LoginController {
   @get('/login')
-  // @use(logger)
+  @use(logger)
   getLogin(req: Request, res: Response): void {
     res.send(`
         <form method="POST">
