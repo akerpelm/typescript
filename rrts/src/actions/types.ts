@@ -1,3 +1,7 @@
+import { FetchTodosAction, DeleteTodoAction } from '../actions';
 export enum ActionTypes {
-  fetchTodos
+  fetchTodos,
+  deleteTodo
 }
+
+export type Action = FetchTodosAction | DeleteTodoAction;
